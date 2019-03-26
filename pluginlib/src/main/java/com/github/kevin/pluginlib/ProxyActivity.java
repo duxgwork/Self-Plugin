@@ -1,6 +1,7 @@
 package com.github.kevin.pluginlib;
 
 import android.app.Activity;
+import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -45,6 +46,11 @@ public class ProxyActivity extends Activity {
     @Override
     public Resources getResources() {
         return (mPluginApk != null) ? mPluginApk.resources : super.getResources();
+    }
+
+    @Override
+    public AssetManager getAssets() {
+        return (mPluginApk != null) ? mPluginApk.assetManager : super.getAssets();
     }
 
     @Override
